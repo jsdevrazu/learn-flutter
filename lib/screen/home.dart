@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:learn/components/card.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // pagecontroller
+  final _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +53,43 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SizedBox(height: 25.0),
           // cards
-          CustomCard()
+          Container(
+            height: 200,
+            child: PageView(
+              scrollDirection: Axis.horizontal,
+              controller: _controller,
+              children: [
+                CustomCard(
+                  blance: 5250.20,
+                  cardNumber: 123443435345,
+                  expiryDate: 10,
+                  expiryYear: 24,
+                  color: Colors.deepPurple[400],
+                ),
+                CustomCard(
+                  blance: 5250.20,
+                  cardNumber: 123443435345,
+                  expiryDate: 10,
+                  expiryYear: 24,
+                  color: Colors.blue[400],
+                ),
+                CustomCard(
+                  blance: 5250.20,
+                  cardNumber: 123443435345,
+                  expiryDate: 10,
+                  expiryYear: 24,
+                  color: Colors.green[400],
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 25),
+          SmoothPageIndicator(
+            controller: _controller,
+            count: 3,
+            effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
+          ),
+          SizedBox(height: 25),
         ],
       )),
     );
