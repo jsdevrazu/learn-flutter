@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:learn/components/card.dart';
+import 'package:learn/components/customButton.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -90,6 +91,33 @@ class _HomeScreenState extends State<HomeScreen> {
             effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
           ),
           SizedBox(height: 25),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // send buttons
+                CustomButton(
+                    iconImagePath:
+                        "https://cdn-icons-png.flaticon.com/512/639/639365.png",
+                    buttonText: "Hello"),
+
+                // say buttons
+                CustomButton(
+                    iconImagePath:
+                        "https://cdn-icons-png.flaticon.com/512/1052/1052814.png",
+                    buttonText: "Pay"),
+
+                // bills button
+                CustomButton(
+                    iconImagePath:
+                        "https://cdn-icons-png.flaticon.com/128/1052/1052815.png",
+                    buttonText: "Bills")
+              ],
+            ),
+          ),
+          SizedBox(height: 25),
+          
         ],
       )),
     );
