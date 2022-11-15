@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:learn/screen/home.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({super.key});
@@ -44,7 +45,10 @@ class SignIn extends StatelessWidget {
                   SignInButton(
                     Buttons.Google,
                     text: "Sign In with Google",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                          builder: (context) => HomeScreen()));
+                    },
                   ),
                   SignInButton(
                     Buttons.Apple,
