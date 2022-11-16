@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:learn/components/banner.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:learn/components/home_title.dart';
+import 'package:learn/components/shop_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -19,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[200],
       drawer: Drawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
@@ -54,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               height: 175,
@@ -86,11 +89,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   ]),
             ),
             SizedBox(height: 25),
-            SmoothPageIndicator(
-              controller: _controller,
-              count: 3,
-              effect: ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
+            Center(
+              child: SmoothPageIndicator(
+                controller: _controller,
+                count: 3,
+                effect:
+                    ExpandingDotsEffect(activeDotColor: Colors.grey.shade800),
+              ),
             ),
+            SizedBox(height: 20),
+            HomeTitle(
+              title: "Herbs Seasonis",
+              smTitle: "View All",
+            ),
+            SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ShopCard(),
+                  ShopCard(),
+                  ShopCard(),
+                ],
+              ),
+            ),
+            SizedBox(height: 20),
+            HomeTitle(
+              title: "Fresh Vegeatble",
+              smTitle: "View All",
+            ),
+            SizedBox(height: 10),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  ShopCard(),
+                  ShopCard(),
+                  ShopCard(),
+                ],
+              ),
+            )
           ],
         ),
       ),
