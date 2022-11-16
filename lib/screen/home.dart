@@ -1,11 +1,13 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:learn/components/banner.dart';
+import 'package:learn/components/drawer_menu.dart';
+import 'package:learn/components/home/banner.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:learn/components/home_title.dart';
-import 'package:learn/components/shop_card.dart';
+import 'package:learn/components/home/home_title.dart';
+import 'package:learn/components/home/menu_list.dart';
+import 'package:learn/components/home/shop_card.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[200],
-      drawer: Drawer(),
+      drawer: Drawer(child: DrawerMenu()),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
