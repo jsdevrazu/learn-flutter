@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:learn/configs/colors.dart';
 
 class HomeBanner extends StatelessWidget {
   final String bannerText;
@@ -36,7 +37,7 @@ class HomeBanner extends StatelessWidget {
                       height: 50,
                       width: 150,
                       decoration: BoxDecoration(
-                          color: Colors.yellow.shade500,
+                          color: primaryColor,
                           borderRadius: BorderRadius.only(
                             bottomRight: Radius.circular(50),
                             bottomLeft: Radius.circular(50),
@@ -46,7 +47,7 @@ class HomeBanner extends StatelessWidget {
                           bannerText,
                           style: TextStyle(
                               fontSize: 16,
-                              color: Colors.white,
+                              color: white,
                               shadows: [
                                 BoxShadow(
                                     color: Colors.green,
@@ -61,14 +62,14 @@ class HomeBanner extends StatelessWidget {
                     bannerTitle,
                     style: TextStyle(
                         fontSize: 40,
-                        color: Colors.yellow[300],
+                        color: primaryColor,
                         fontWeight: FontWeight.bold),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 20.0),
                     child: Text(
                       bannerSmTitle,
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: white),
                     ),
                   ),
                 ],

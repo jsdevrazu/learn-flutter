@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/configs/colors.dart';
 
 class MenuTitle extends StatelessWidget {
   final icon;
@@ -19,7 +20,7 @@ class MenuTitle extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.black45),
+        style: TextStyle(color: textColor),
       ),
     );
   }

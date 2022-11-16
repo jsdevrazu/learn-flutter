@@ -8,10 +8,11 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:learn/components/home/home_title.dart';
 import 'package:learn/components/home/menu_list.dart';
 import 'package:learn/components/home/shop_card.dart';
+import 'package:learn/configs/colors.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({ super.key });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -23,39 +24,39 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: mainBg,
       drawer: Drawer(child: DrawerMenu()),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: textColor),
         title: Text(
           "Home",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: textColor),
         ),
         // ignore: prefer_const_literals_to_create_immutables
         actions: [
           CircleAvatar(
             radius: 12,
-            backgroundColor: Colors.grey.shade200,
+            backgroundColor: bgGray,
             child: Icon(
               Icons.search,
               size: 17,
-              color: Colors.black,
+              color: textColor,
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: CircleAvatar(
               radius: 12,
-              backgroundColor: Colors.grey.shade200,
+              backgroundColor: bgGray,
               child: Icon(
                 Icons.shopping_cart,
                 size: 17,
-                color: Colors.black,
+                color: textColor,
               ),
             ),
           )
         ],
-        backgroundColor: Colors.yellow.shade700,
+        backgroundColor: primaryColor,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),

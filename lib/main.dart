@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn/configs/colors.dart';
 import 'package:learn/screen/sign_in.dart';
 
 void main() {
@@ -13,6 +14,8 @@ class MyApp extends StatelessWidget {
     // ignore: prefer_const_constructors
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primaryColor: primaryColor, scaffoldBackgroundColor: mainBg),
       home: SignIn(),
     );
   }

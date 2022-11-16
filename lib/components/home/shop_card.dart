@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:learn/configs/colors.dart';
 
 class ShopCard extends StatelessWidget {
   const ShopCard({super.key});
@@ -11,8 +12,8 @@ class ShopCard extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 5),
       height: 300,
       width: 200,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: Colors.white),
+      decoration:
+          BoxDecoration(borderRadius: BorderRadius.circular(10), color: white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -41,16 +42,16 @@ class ShopCard extends StatelessWidget {
                   SizedBox(height: 6),
                   ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.yellow,
+                        backgroundColor: primaryColor,
                         minimumSize: const Size.fromHeight(40)),
                     onPressed: () {},
                     icon: Icon(
                       Icons.shopping_cart,
-                      color: Colors.black,
+                      color: textColor,
                     ),
                     label: Text(
                       "Add to cart",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(color: textColor),
                     ),
                   ),
                 ],

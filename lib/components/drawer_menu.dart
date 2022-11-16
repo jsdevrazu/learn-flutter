@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:learn/components/home/menu_list.dart';
+import 'package:learn/configs/colors.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -9,18 +10,18 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.yellow.shade300,
+      color: primaryColor,
       child: ListView(
         children: [
           DrawerHeader(
               child: Row(
             children: [
               CircleAvatar(
-                backgroundColor: Colors.white54,
+                backgroundColor: mainBg,
                 radius: 43,
                 child: CircleAvatar(
                   radius: 40,
-                  backgroundColor: Colors.yellow,
+                  backgroundColor: primaryColor,
                 ),
               ),
               SizedBox(width: 20),
@@ -56,17 +57,17 @@ class DrawerMenu extends StatelessWidget {
               children: [
                 Text(
                   "Contact Support",
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Colors.black),
+                  style:
+                      TextStyle(fontWeight: FontWeight.bold, color: textColor),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Row(
                   children: [Text("Call us:"), Text(" +8801739402788")],
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 5,
                 ),
                 Row(
                   children: [Text("Main us:"), Text(" info@devcoded.com")],

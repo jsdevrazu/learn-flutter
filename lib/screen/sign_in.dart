@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:learn/configs/colors.dart';
 import 'package:learn/screen/home.dart';
 
 class SignIn extends StatelessWidget {
@@ -27,19 +28,16 @@ class SignIn extends StatelessWidget {
                 children: [
                   Text(
                     "Sign in to continue",
-                    style: TextStyle(fontSize: 16, color: Colors.grey.shade900),
+                    style: TextStyle(fontSize: 16, color: bgDarkGray),
                   ),
                   Text(
                     "Mango",
-                    style: TextStyle(
-                        fontSize: 50,
-                        color: Colors.white,
-                        shadows: [
-                          BoxShadow(
-                              color: Colors.green.shade600,
-                              offset: Offset(3, 3),
-                              blurRadius: 5)
-                        ]),
+                    style: TextStyle(fontSize: 50, color: white, shadows: [
+                      BoxShadow(
+                          color: Colors.green.shade600,
+                          offset: Offset(3, 3),
+                          blurRadius: 5)
+                    ]),
                   ),
                   SizedBox(height: 30),
                   SignInButton(
