@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn/configs/colors.dart';
+import 'package:learn/screen/partice_api_call.dart';
 import 'package:learn/screen/sign_in.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: primaryColor, scaffoldBackgroundColor: mainBg),
-      home: SignIn(),
+      home: ApiCallScreen(),
     );
   }
 }
