@@ -1,13 +1,41 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:learn/configs/colors.dart';
 import 'package:learn/screen/home.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn({super.key});
+
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  Future<void> _googleSignUp() async {
+    try {
+      final GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ["email"]);
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth!.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      final User? user = (await _auth.signInWithCredential(credential)).user;
+      print(user);
+    } catch (e) {
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +71,11 @@ class SignIn extends StatelessWidget {
                   SignInButton(
                     Buttons.Google,
                     text: "Sign In with Google",
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(
-                          builder: (context) => HomeScreen()));
+                    onPressed: () async {
+                      await _googleSignUp().then((value) =>
+                          Navigator.of(context).pushReplacement(
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen())));
                     },
                   ),
                   SignInButton(
