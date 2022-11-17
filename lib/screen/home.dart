@@ -9,6 +9,7 @@ import 'package:learn/components/home/home_title.dart';
 import 'package:learn/components/home/menu_list.dart';
 import 'package:learn/components/home/shop_card.dart';
 import 'package:learn/configs/colors.dart';
+import 'package:learn/screen/search.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,10 +38,12 @@ class _HomeScreenState extends State<HomeScreen> {
           CircleAvatar(
             radius: 12,
             backgroundColor: bgGray,
-            child: Icon(
-              Icons.search,
-              size: 17,
-              color: textColor,
+            child: IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: ((context) => SearchScreen())));
+              },
+              icon: Icon(Icons.search, size: 17, color: textColor),
             ),
           ),
           Padding(
