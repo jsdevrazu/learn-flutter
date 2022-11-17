@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:learn/configs/colors.dart';
+import 'package:learn/screen/product_overview.dart';
 
 class ShopCard extends StatelessWidget {
   const ShopCard({super.key});
@@ -17,12 +18,20 @@ class ShopCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            flex: 2,
-            child: Image.network(
-                "https://www.freepnglogos.com/uploads/vegetables-png/fruit-and-vegetables-basket-png-20.png"),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => ProductOverScreen()));
+            },
+            child: Container(
+                height: 200,
+                padding: const EdgeInsets.all(5),
+                width: double.infinity,
+                child: Image.network(
+                    "https://www.freepnglogos.com/uploads/vegetables-png/fruit-and-vegetables-basket-png-20.png")),
           ),
           Expanded(
+            flex: 2,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
