@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn/components/home/menu_list.dart';
 import 'package:learn/configs/colors.dart';
+import 'package:learn/screen/profile.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({super.key});
@@ -41,13 +42,44 @@ class DrawerMenu extends StatelessWidget {
               )
             ],
           )),
-          MenuTitle(icon: Icons.home_outlined, title: "Home"),
-          MenuTitle(icon: Icons.shopping_cart_outlined, title: "Review Cart"),
-          MenuTitle(icon: Icons.person_outline, title: "My Profile"),
-          MenuTitle(icon: Icons.notifications_outlined, title: "Notification"),
-          MenuTitle(icon: Icons.star_outline, title: "Rating & Review"),
-          MenuTitle(icon: Icons.favorite_outline, title: "Wishlist"),
-          MenuTitle(icon: Icons.question_mark_outlined, title: "FAQ"),
+          MenuTitle(
+            icon: Icons.home_outlined,
+            title: "Home",
+            onTap: () {},
+          ),
+          MenuTitle(
+            icon: Icons.shopping_cart_outlined,
+            title: "Review Cart",
+            onTap: () {},
+          ),
+          MenuTitle(
+            icon: Icons.person_outline,
+            title: "My Profile",
+            onTap: () {
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: ((context) => ProfileScreen())));
+            },
+          ),
+          MenuTitle(
+            icon: Icons.notifications_outlined,
+            title: "Notification",
+            onTap: () {},
+          ),
+          MenuTitle(
+            icon: Icons.star_outline,
+            title: "Rating & Review",
+            onTap: () {},
+          ),
+          MenuTitle(
+            icon: Icons.favorite_outline,
+            title: "Wishlist",
+            onTap: () {},
+          ),
+          MenuTitle(
+            icon: Icons.question_mark_outlined,
+            title: "FAQ",
+            onTap: () {},
+          ),
           SizedBox(height: 20),
           Container(
             height: 350,
